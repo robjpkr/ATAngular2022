@@ -1,0 +1,22 @@
+.vehiclepage-container{
+    margin:20px 50px 0px 50px;
+}
+
+img{
+    width:100%;
+}
+
+:host ::ng-deep  .carousel-indicators {
+    display: none;
+}
+
+:host ::ng-deep .carousel-control-next-icon, 
+:host ::ng-deep .carousel-control-prev-icon {
+    border:1px solid rgb(11, 0, 73);
+    background-color: rgb(41, 55, 182);
+    border-radius: 5px;
+}
+
+.card{
+    border:0px;
+}

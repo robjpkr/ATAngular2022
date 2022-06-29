@@ -1,0 +1,39 @@
+.navbar>.container{
+    justify-content: start;
+}
+
+.navbar{
+    border-bottom:1px solid rgb(226, 226, 226);
+    background-color: #FFFF;
+    height:80px;
+    padding:3px 0px 0px 0px;
+    display: block;
+}
+
+.first-nav-link{
+    padding-left:0px !important;
+    color:red !important;
+}
+
+.nav-link{
+    padding:0px 8px;
+    font-size: 0.8em;;
+    margin:0px;
+    color:black;
+}
+
+.lower-section-navbar{
+    padding-top:20px;
+}
+
+.lower-section-navbar .nav-link{
+    font-weight: 600;
+    position: relative;
+    top:1px;
+}
+
+.lower-section-navbar .first-nav-link{
+    font-weight: 600;
+    position: relative;
+    top:0px;
+}

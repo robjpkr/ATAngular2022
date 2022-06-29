@@ -1,0 +1,39 @@
+.searchbox{
+    background-color: #fff;
+    height:360px;
+    width:340px;
+    float:left;
+    border-radius: 5px;
+    margin-top:10px;
+}
+
+.perfect-car{
+    font-size: large;
+    text-align: center;
+    margin-top:10px;
+}
+
+#postcode, #distance{
+    border-radius: 0px;
+}
+
+.row{
+    margin:0px;
+}
+
+.searchbutton{
+    width:100%;
+    border-radius: 0px;
+}
+
+.form-field {
+    width: 100%;
+    height: 31px;
+    border-radius: 5px;
+    overflow: hidden;
+    border:1px solid grey;
+    border-radius: 0px;
+}
+
+
+

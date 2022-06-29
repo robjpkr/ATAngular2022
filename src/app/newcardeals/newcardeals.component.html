@@ -1,0 +1,30 @@
+<div class="new-car-container">
+    <p class="title">Brand new car deals</p>
+    <div class="container">
+        <mat-card *ngFor="let vehicle of newvehicles" [routerLink]="['/vehiclepage', vehicle.vehicleID]" routerLinkActive="active" >
+            <img mat-card-image src={{vehicle.images[0].imagePath}}>
+            <mat-card-content>
+                <div class="row">
+                    <p class="col-4 mrrp">MRRP</p>
+                    <p class="col-4 now">Now</p>
+                    <p class="col-4 save">Save</p>
+                </div>
+                <div class="row">
+                    <p class="col-4 mrrp-content">{{vehicle.mrrp}}</p>
+                    <p class="col-4 now-content">{{vehicle.price}}</p>
+                    <p class="col-4 save-content">{{vehicle.save}}</p>
+                </div>
+                <div class="row">
+                    <hr>
+                </div>
+                <div class="row">
+                    <div class="col-12 description">
+                        {{vehicle.make}}
+                        {{vehicle.model}}
+                        {{vehicle.version}}
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
