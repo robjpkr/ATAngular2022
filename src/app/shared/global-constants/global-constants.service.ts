@@ -8,7 +8,8 @@ export class GlobalConstantsService {
 
   constructor() { }
 
-  public static baseAppUrl: string = 'https://localhost:7295/api/Vehicle';
+  //public static baseAppUrl: string = 'https://localhost:7295/api/vehicle';
+  public static baseAppUrl: string = 'https://at2022.azurewebsites.net/api/vehicle';
 
   public static XAPIKey: string = 'Sakl439jkdsIHndjs0Ik';
 
