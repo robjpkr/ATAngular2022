@@ -26,6 +26,12 @@ export class RestApiService {
       .pipe(retry(1), catchError(this.handleError));
   }
 
+  getSingle(route: string): Observable<any> {
+    return this.http
+      .get<any[]>(this.apiURL + route, this.httpOptions)
+      .pipe(retry(1), catchError(this.handleError));
+  }
+
   getById(id: any): Observable<any> {
     return this.http
       .get<any>(this.apiURL + "/GetById?id=" + id, this.httpOptions)

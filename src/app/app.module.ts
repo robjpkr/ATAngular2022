@@ -14,7 +14,10 @@ import { AppRoutingModule } from '../app/app-routing-module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { VehiclepageComponent } from './vehiclepage/vehiclepage.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavbarbottomComponent } from './navbarbottom/navbarbottom.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     SearchboxComponent,
     MainPageComponent,
     NavbarComponent,
-    VehiclepageComponent
+    VehiclepageComponent,
+    NavbarbottomComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +39,12 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     AppRoutingModule,
     MatCardModule,
-    NgbModule
+    NgbModule,
+    MatExpansionModule,
+    MatIconModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent]
 })
 export class AppModule { }

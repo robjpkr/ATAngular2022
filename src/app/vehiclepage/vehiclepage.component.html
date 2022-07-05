@@ -1,27 +1,34 @@
-<div class="vehiclepage-container">
-    <div class="row">
-        <div class="col-md-8">
-            <ngb-carousel [interval] = 0  *ngIf="vehicle?.images">
-                 <ng-template ngbSlide *ngFor="let image of vehicle.images; let i = index">
-                    <img [src]="image.imagePath" alt="Carousel Images">
-                </ng-template>
-            </ngb-carousel>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <h1>{{vehicle?.make}} {{vehicle?.model}}</h1>
-                <p>{{vehicle?.year}}</p>
-                <p>{{vehicle?.version}}</p>
-                <p>{{vehicle?.price| currency:'GBP' | slice:0:-3}}</p>
-            </div>
-        </div>
-        <div class="col-md-8">
-            <div class="card">
-                <h1>Overview</h1>
-                <p>AVAILABLE TO DRIVE AWAY TODAY.</p>
-                <p>miles</p>
-                <p>above average</p>
-            </div>
+<div class="container">
+    <div class="vehiclepage-container">
+        <div class="row">
+            <mat-card class="col-md-7 image-box">
+                <ngb-carousel [interval] = 0  *ngIf="vehicle?.images">
+                    <ng-template ngbSlide *ngFor="let image of vehicle.images; let i = index">
+                        <img [src]="image.imagePath" alt="Carousel Images">
+                    </ng-template>
+                </ngb-carousel>
+                <div>
+                    <div class="display-images" (click)="fadeImage(i)" *ngFor="let image of vehicle?.images; let i = index">
+                        <img [src]="image.imagePath" alt="Display Images">
+                    </div>
+                </div>
+            </mat-card>
+            <mat-card class="col-md-4 vehicle-info">
+                <div class="card">
+                    <h1>{{vehicle?.make}} {{vehicle?.model}}</h1>
+                    <p>{{vehicle?.year}}</p>
+                    <p>{{vehicle?.version}}</p>
+                    <p>{{vehicle?.price| currency:'GBP' | slice:0:-3}}</p>
+                </div>
+            </mat-card>
+            <mat-card class="col-md-7">
+                <div class="card">
+                    <h1>Overview</h1>
+                    <p>AVAILABLE TO DRIVE AWAY TODAY.</p>
+                    <p>miles</p>
+                    <p>above average</p>
+                </div>
+            </mat-card>
         </div>
     </div>
 </div>

@@ -1,5 +1,6 @@
 .vehiclepage-container{
     margin:20px 50px 0px 50px;
+    min-height:750px;
 }
 
 img{
@@ -19,4 +20,47 @@ img{
 
 .card{
     border:0px;
+    border-radius: 5px;
+}
+
+.display-images img{
+    height:70px;
+    width:auto;
+    padding:5px;
+}
+
+.display-images {
+    display: inline;
+}
+
+[class*="col-"] {
+    padding:0px;
+}
+
+.vehicle-info{
+    padding-left:20px;
+    margin-bottom: 20px;
+    margin-left:20px;
+}
+
+.image-box{
+    border-radius: 5px;
+    margin-bottom:20px;
+}
+
+.card{
+    padding:5px;
+}
+
+.i1 {
+    height:100px !important;
+}
+
+.vehiclepage-container{
+    margin-bottom: 20px;
+}
+
+img{
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }

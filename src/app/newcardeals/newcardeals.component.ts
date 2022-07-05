@@ -19,7 +19,17 @@ export class NewcardealsComponent implements OnInit {
 
   getMainPageNewVehicles(route: string){
     this.restApi.get(route).subscribe((data: Vehicle[]) => {
+      this.populateMRRPandSave(data)
       this.newvehicles = data;
     });
+  }
+
+  populateMRRPandSave(data:Vehicle[]){
+    data.forEach(function(element)
+    {
+      element.mrrp = '£' + (parseInt(element.price)/100*105).toString().split('.')[0];
+      element.save = '£' + (parseInt(element.price)/100*105 - parseInt(element.price)).toString().split('.')[0];
+      element.price = '£' + element.price;
+    })
   }
 }

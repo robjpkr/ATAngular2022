@@ -1,70 +1,31 @@
 <div class="container">
     <div class="searchbox">
         <p class="perfect-car">Find your perfect car</p>
-        <form>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-6 searchbox-left">
-                        <input required ngModel #postcode="ngModel" name="postcode" (change)="inputPostCode(postcode)" id="postcode" placeholder="PostCode" type="text" class="form-control">
-                        <div class="alert-danger" *ngIf="!postcode.touched && !postcode.valid">Please enter a valid UK postcode</div>
+            <div fxLayout="row"
+                  fxLayoutAlign="space-around" fxLayoutGap="-30px">
+                  <div class="pt-container">
+                    <input class="pt" [(ngModel)]="postcode" type="text" name="postcode" placeholder={{ptplaceHolder}} (click)="clickPostcodeTextBox($event)" (focusout)="focusOutPostcodeTextBox($event)">
+                    <div class="pt-warining">
+                      <p [ngClass]="showWarningMessage == 'true' ? 'showWarningMessage' : ''">Please enter a valid UK postcode</p>
                     </div>
-                    <div class="col-6 searchbox-right">
-                        <mat-form-field class="form-field">
-                            <p>National</p>
-                              <mat-select class="selectt" (selectionChange)="selectDistance($event)" name="distance" [placeholder]="distance">
-                                <mat-option class="option" *ngFor="let distance of selectnational" [value]="distance">
-                                  {{distance}}
-                                </mat-option>
-                              </mat-select>
-                          </mat-form-field>
-                    </div>
-                    <div  class="col-6 searchbox-left">
-                        <mat-form-field class="form-field">
-                            <p>Make</p>
-                              <mat-select class="selectt" (selectionChange)="selectMake($event)" name="model" #modelselect>
-                                <mat-option class="option" *ngFor="let distance of selectnational" [value]="distance">
-                                  {{distance}}
-                                </mat-option>
-                              </mat-select>
-                          </mat-form-field>
-                    </div>
-                    <div  class="col-6 searchbox-right">
-                        <mat-form-field class="form-field">
-                            <p>Model</p>
-                              <mat-select class="selectt" (selectionChange)="selectModel($event)" name="model" #modelselect>
-                                <mat-option class="option" *ngFor="let distance of selectnational" [value]="distance">
-                                  {{distance}}
-                                </mat-option>
-                              </mat-select>
-                          </mat-form-field>
-                    </div>
-                    <div  class="col-6 searchbox-left">
-                        <mat-form-field class="form-field">
-                            <p>Min Price</p>
-                              <mat-select class="selectt" (selectionChange)="selectMinPrice($event)" name="model" #modelselect>
-                                <mat-option class="option" *ngFor="let distance of selectnational" [value]="distance">
-                                  {{distance}}
-                                </mat-option>
-                              </mat-select>
-                          </mat-form-field>
-                    </div>
-                    <div  class="col-6 searchbox-right">
-                        <mat-form-field class="form-field">
-                            <p>Max Price</p>
-                              <mat-select class="selectt" (selectionChange)="selectMaxPrice($event)" name="model" #modelselect>
-                                <mat-option class="option" *ngFor="let distance of selectnational" [value]="distance">
-                                  {{distance}}
-                                </mat-option>
-                              </mat-select>
-                          </mat-form-field>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <button class="searchbutton btn btn-primary">Search XXX cars</button>
-                    </div>
+                  </div>
+
+                  <div class="nt-container">
+                    <input class="nt" [(ngModel)]="national" type="text" name="national" placeholder={{ntplaceHolder}} (click)="clickDropDownTextBox($event)">
+                        <ul class="dropdown-list" [ngClass]="{'dropdown-open' : dropdownOpen}" (mouseover)="clickDropDownTextBox($event)" (mouseout)="hideDropdown()">
+                          <li class="dropdown-option" *ngFor="let opt of options let i = index"
+                              tabindex={{i}}                             
+                              role="option"
+                              (click)="clickDropDownOption(opt)">
+                              <p>{{opt}}</p>
+                            </li>
+                      </ul>
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button class="searchbutton btn btn-primary">Search {{vehicleCount}} Cars</button>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
-</div>

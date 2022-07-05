@@ -1,0 +1,58 @@
+.navbar {
+    border-top: 1px solid rgb(226, 226, 226);
+}
+
+.mat-expansion-panel{
+    box-shadow: none;
+    border-radius: 0px;
+}
+
+.ng-tns-c124-0, .ng-tns-c124-2, .ng-tns-c124-4, .ng-tns-c124-6{
+    border-top:1px solid rgb(226, 226, 226);
+}
+
+.blue-border{
+    border-left:5px solid blue;
+}
+
+.remove-blue-border{
+    border-left:0px;
+}
+
+.middle-col{
+    padding-right:50px;
+}
+
+:host /deep/ .mat-expansion-indicator {
+    position: relative;
+    right: 345px;
+}
+
+.mat-expansion-panel-header-title{
+    margin-left:30px;
+}
+
+:host /deep/ .mat-expansion-panel-body {
+    margin-left:30px;
+}
+
+.section-cols{
+    margin-top:20px;
+}
+
+p{
+    border:0px !important;
+}
+
+.ng-tns-c133-0, .ng-tns-c133-2, .ng-tns-c133-4, .ng-tns-c133-6{
+    margin:2px;
+}
+
+.navbotttomimg{
+    margin-bottom:60px;
+    margin-top:30px;
+}
+
+.navbar.navbar-light{
+    background-color: white;;
+}

@@ -11,7 +11,7 @@
                 </div>
                 <div class="row">
                     <p class="col-4 mrrp-content">{{vehicle.mrrp}}</p>
-                    <p class="col-4 now-content">{{vehicle.price}}</p>
+                    <p class="col-4 now-content">{{vehicle.price | slice:0:-3 }}</p>
                     <p class="col-4 save-content">{{vehicle.save}}</p>
                 </div>
                 <div class="row">

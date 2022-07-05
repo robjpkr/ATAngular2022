@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ConnectableObservable } from 'rxjs';
-import { Images } from '../shared/models/images-model';
 import { Vehicle } from '../shared/models/vehicle-model';
 import { RestApiService } from '../shared/rest-api-service/rest-api.service';
 
@@ -23,7 +21,10 @@ export class VehiclepageComponent implements OnInit {
             await this.route.paramMap.subscribe(params => { this.vehicleID = params.get('vehicleID'); });
             await this.restApi.getById(this.vehicleID).subscribe(async (data: Vehicle) => {
               this.vehicle = data;
-              console.log(data);
             });
+  }
+
+  fadeImage(index:number){
+    console.log(index);
   }
 }
