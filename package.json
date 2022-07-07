@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-prod": "ng build --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -24,7 +25,7 @@
     "@angular/router": "^14.0.3",
     "@ng-bootstrap/ng-bootstrap": "^12.0.2",
     "bootstrap": "^5.1.3",
-    "material-design-icons-iconfont": "^6.6.0",
+    "material-design-icons-iconfont": "^6.7.0",
     "ngx-bootstrap": "^8.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

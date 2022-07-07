@@ -18,6 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarbottomComponent } from './navbarbottom/navbarbottom.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
+import { SelectComponent } from './shared/components/select/select.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MatIconModule } from '@angular/material/icon';
     MainPageComponent,
     NavbarComponent,
     VehiclepageComponent,
-    NavbarbottomComponent
+    NavbarbottomComponent,
+    SelectComponent
   ],
   imports: [
     BrowserModule,

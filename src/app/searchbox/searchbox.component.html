@@ -4,22 +4,13 @@
             <div fxLayout="row"
                   fxLayoutAlign="space-around" fxLayoutGap="-30px">
                   <div class="pt-container">
-                    <input class="pt" [(ngModel)]="postcode" type="text" name="postcode" placeholder={{ptplaceHolder}} (click)="clickPostcodeTextBox($event)" (focusout)="focusOutPostcodeTextBox($event)">
+                    <input class="pt" [(ngModel)]="postcode" type="text" name="postcode" placeholder={{ptPlaceHolder}} (click)="clickPostcodeTextBox($event)" (focusout)="focusOutPostcodeTextBox($event)">
                     <div class="pt-warining">
                       <p [ngClass]="showWarningMessage == 'true' ? 'showWarningMessage' : ''">Please enter a valid UK postcode</p>
                     </div>
                   </div>
-
                   <div class="nt-container">
-                    <input class="nt" [(ngModel)]="national" type="text" name="national" placeholder={{ntplaceHolder}} (click)="clickDropDownTextBox($event)">
-                        <ul class="dropdown-list" [ngClass]="{'dropdown-open' : dropdownOpen}" (mouseover)="clickDropDownTextBox($event)" (mouseout)="hideDropdown()">
-                          <li class="dropdown-option" *ngFor="let opt of options let i = index"
-                              tabindex={{i}}                             
-                              role="option"
-                              (click)="clickDropDownOption(opt)">
-                              <p>{{opt}}</p>
-                            </li>
-                      </ul>
+                    <dropdown [options]="nationalOptions" [title]="national"></dropdown>
                   </div>
             </div>
             <div class="row">

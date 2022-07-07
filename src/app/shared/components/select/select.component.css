@@ -1,0 +1,37 @@
+.dropdown {
+    height:38px;
+    max-width:134px;
+    padding:12px 4px;
+    border-radius: 1px;
+    border:1px solid grey;
+}
+
+.dropdown-list{
+    list-style: none;
+    text-align: left;
+    border:1px solid grey;
+    border-radius: 5px;
+    position: absolute;
+    top:90px;
+    background-color: #fff;
+    padding: 0px;
+}
+
+.dropdown-list p{
+    padding:0px 5px;
+    margin:0px;
+}
+
+.dropdown-list{
+    display: none;
+}
+
+.dropdown-open{
+    display: block;
+}
+
+.dropdown-option:hover{
+    background-color: blue;
+    cursor: pointer;
+    color:white;
+}

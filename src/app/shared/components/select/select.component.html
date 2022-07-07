@@ -1,0 +1,9 @@
+<input class="dropdown" [(ngModel)]="dropdown" type="text" name="dropdown" placeholder={{title}} (click)="clickDropDownTextBox($event)">
+<ul class="dropdown-list" [ngClass]="{'dropdown-open' : dropdownOpen}" (clickOutside)="dropdownOpen = false">
+  <li class="dropdown-option" *ngFor="let opt of options let i = index"
+      tabindex={{i}}
+      role="option"
+      (click)="clickDropDownOption(opt)">
+      <p>{{opt}}</p>
+    </li>
+</ul>

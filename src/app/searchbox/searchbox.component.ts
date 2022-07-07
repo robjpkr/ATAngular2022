@@ -4,6 +4,7 @@ import { Vehicle } from '../shared/models/vehicle-model';
 import { GlobalConstantsService } from '../shared/global-constants/global-constants.service';
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
+import { NgbPaginationLast } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-searchbox',
@@ -15,15 +16,13 @@ export class SearchboxComponent implements OnInit {
   constructor(private restApi:RestApiService, private http:HttpClient, private elem: ElementRef ) {}
   
   allVehicles: Vehicle[];
-  selectNational = GlobalConstantsService.National  
   vehicleCount:number;
-  ptplaceHolder:string = "Postcode";
-  ntplaceHolder:string = "National"
+  ptPlaceHolder:string = "Postcode";
   postcode:string;
-  national:string;
   exists:any;
   showWarningMessage:string = 'false';
-  options: string[] = [
+  national:string = 'National';
+  nationalOptions: string[] = [
     "Within 20 miles",
     "Within 40 miles",
     "Within 60 miles",
@@ -35,7 +34,6 @@ export class SearchboxComponent implements OnInit {
     "Within 180 miles",
     "National"
   ];
-  dropdownOpen:boolean = false;
 
   ngOnInit() {
     this.getAllVehicles();
@@ -55,7 +53,7 @@ export class SearchboxComponent implements OnInit {
   }
 
   clickPostcodeTextBox(e:Event){
-    this.ptplaceHolder = "";
+    this.ptPlaceHolder = "";
   }
 
   async focusOutPostcodeTextBox(e:Event){
@@ -68,27 +66,11 @@ export class SearchboxComponent implements OnInit {
     if(postcodeExists == undefined){
       this.postcode = "";
       this.showWarningMessage = 'true';
-      this.ptplaceHolder = "Postcode";
+      this.ptPlaceHolder = "Postcode";
 
     }
     else{  
       this.showWarningMessage = '';
     }   
-  }
-
-  clickDropDownOption(opt:string){
-    this.dropdownOpen = false;
-    this.ntplaceHolder = opt;
-    let within = document.getElementsByClassName("dropdown-option");
-  }
-
-  clickDropDownTextBox(targetElement:Event){
-    this.dropdownOpen = true;
-    this.ntplaceHolder = "";
-  }
-
-  hideDropdown(){
-    this.dropdownOpen = false;
-    this.ntplaceHolder = "National";
   }
 }
